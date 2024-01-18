@@ -1,0 +1,82 @@
+/* ======== General ======== */
+
+body{
+	font-family: "Arial"; 
+	margin: 0; padding: 0;
+	background-color: #000
+}
+.page-black{
+	color: #fff; 
+	padding: 50px 0;
+}
+
+/* ======== Centered Clock ======== */
+
+/* Center the clock horizontally */
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-circle {
+    /* Add your custom styles for the clock here */
+    width: 460px;
+    height: 460px;
+    background-image: url("clock/01.png");
+    background-size: 100% 100%;
+    position: relative;
+}
+
+/* Add custom styles for clock face elements here */
+.hero-face {
+    /* Add your custom styles for clock face elements here */
+}
+
+span#w_hour, 
+span#w_hour_ampm, 
+span#w_date, 
+span#w_day{
+	display: block; 
+	text-align: center;
+}
+span#w_hour{
+	font-size: 7em; 
+	padding-top: 80px;
+}
+span#w_hour_ampm{
+	font-size: 2.4em;
+}
+span#w_date{
+	font-size: 1.6em; 
+	padding-top: 30px;
+}
+span#w_day{
+	font-size: 1.6em;
+}
+
+@media screen and (max-width: 480px) {
+	.centered{
+		margin-top: 150px;
+	}
+	.hero-circle{
+		width: 400px; 
+		height: 400px;
+	}
+	span#w_hour{
+		font-size: 6em; 
+		padding-top: 70px;
+	}
+	span#w_hour_ampm{
+		font-size: 2em;
+	}
+	span#w_date{
+		font-size: 1.5em; 
+		padding-top: 20px;
+	}
+	span#w_day{
+		font-size: 1.5em;
+	}
+}

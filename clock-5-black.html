@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clock 5</title>
+        <link rel="stylesheet" href="clock-5.css">
+
+        <script>
+            function startTime(){
+                var now = new Date(),
+                second = now.getSeconds() * 6,
+                minute = now.getMinutes() * 6 + second / 60,
+                hour = ((now.getHours() % 12) / 12) * 360 + 90 + minute / 12;
+            }
+        </script>
+    </head>
+    
+    <body class="is-moment" onload="startTime()">
+        <div class="centered">
+            <div class="page-black">
+                <div class="centered">
+                    <div id="clock-5" class="hero-circle">
+                        <div class="hero-face">
+                            <span id="w_hour"> Hour </span>
+                            <span id="w_hour_ampm"> HourAmPm </span>
+                            <span id="w_date"> Date </span>
+                            <span id="w_day"> Day </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="padding:0 50px; color: white; max-width: 600px; margin: 0 auto;">
+            <h1>About Clock-5 project</h1>
+
+            <p>The Clock-5 project was a testament to design creativity and practical problem-solving. Initially developed for <a href="https://inkcase.com/" style="color: yellow;">InkCase</a>, an iPhone case with an E-ink screen, Clock-5 aimed to optimize battery life while offering a valuable user experience.
+            </p>
+            <p>The challenge at hand was to reduce battery consumption, particularly during screen refreshes. E-ink technology, known for its energy-efficient properties, consumes battery power only when the screen refreshes. To address this, I conceptualized and designed the Clock-5—a clock that refreshed its display only once every 5 minutes, as opposed to the traditional one-minute intervals. This seemingly small adjustment had a significant impact on conserving battery power.
+            </p>
+            <p>What set Clock-5 apart was its unique approach to timekeeping. Instead of providing minute-by-minute precision, it offered users a convenient 5-minute time window. Whether indicating 4:01 pm or 4:05 pm, this design empowered users to estimate time effectively, aiding in better time management.
+            </p>
+            <p>This project served as a prime example of design creativity's ability to solve real-world challenges. By leveraging graphic design principles, I contributed to technology optimization, resulting in a product that enhanced user experiences while reducing energy consumption. The Clock-5 project illustrated how design could have a tangible and positive impact on device functionality and usability.</p>
+        </div>
+        
+        
+        
+        <script>
+            // var d = new Date();
+            // document.getElementById("w_date").innerHTML = d.toDateString();
+            
+            var d = new Date();
+            var weekday = new Array(7);
+            weekday[0] = "SUNDAY";
+            weekday[1] = "MONDAY";
+            weekday[2] = "TUESDAY";
+            weekday[3] = "WEDNESDAY";
+            weekday[4] = "THURSDAY";
+            weekday[5] = "FRIDAY";
+            weekday[6] = "SATURDAY";
+            
+            function setbrimg(minute)
+			{
+				var el=document.getElementById("clock-5");
+				if(minute<=5) {
+					el.style.backgroundImage="url(clock/01.png)";
+                    el.style.backgroundSize ="100% 100%";
+				}else if(minute<=10){
+					el.style.backgroundImage="url(clock/02.png)";
+                    el.style.backgroundSize ="100% 100%";
+				}else if(minute<=15){
+					el.style.backgroundImage="url(clock/03.png)";
+                    el.style.backgroundSize ="100% 100%";
+				}else if(minute<=20){
+					el.style.backgroundImage="url(clock/04.png)";
+                    el.style.backgroundSize ="100% 100%";
+				}else if(minute<=25){
+					el.style.backgroundImage="url(clock/05.png";
+                    el.style.backgroundSize ="100% 100%";
+				}else if(minute<=30){
+					el.style.backgroundImage="url(clock/06.png)";
+                    el.style.backgroundSize ="100% 100%";
+				}else if(minute<=35){
+					el.style.backgroundImage="url(clock/07.png)";
+                    el.style.backgroundSize ="100% 100%";
+				}else if(minute<=40){
+					el.style.backgroundImage="url(clock/08.png)";
+                    el.style.backgroundSize ="100% 100%";
+				}else if(minute<=45){
+					el.style.backgroundImage="url(clock/09.png)";
+                    el.style.backgroundSize ="100% 100%";
+				}else if(minute<=50){
+					el.style.backgroundImage="url(clock/10.png)";
+                    el.style.backgroundSize ="100% 100%";
+				}else if(minute<=55){
+					el.style.backgroundImage="url(clock/11.png)";
+                    el.style.backgroundSize ="100% 100%";
+				}else if(minute<=60){
+					el.style.backgroundImage="url(clock/12.png)";
+                    el.style.backgroundSize ="100% 100%";
+				}
+			}
+			
+            function checkTime(i) {
+                if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+                return i;
+            }
+        
+            function formatTime(hour, minute) {
+                var amPM = (hour > 11) ? "PM" : "AM";
+                if (hour > 12) {
+                    hour -= 12;
+                }else if (hour == 0) {
+                    hour = "12";
+                }
+                return checkTime(hour) + ":" + checkTime(minute) + amPM;
+            }
+            
+            function formatHTime(hour) {
+               
+                if (hour > 12) {
+                    hour -= 12;
+                }else if (hour == 0) {
+                    hour = "12";
+                }
+                return checkTime(hour);
+            }
+            
+        function formatDate(date) {
+            var monthNames = [
+                              "JAN", "FEB", "MAR",
+                              "APR", "MAY", "JUN", "JUL",
+                              "AUG", "SEP", "OCT",
+                              "NOV", "DEC"
+                              ];
+                              
+                              var day = date.getDate();
+                              var monthIndex = date.getMonth();
+                              var year = date.getFullYear();
+                              
+                              return day + ' ' + monthNames[monthIndex] + ' ' + year;
+        }
+        
+        var n = weekday[d.getDay()];
+        var h = d.getHours();
+        document.getElementById("w_day").innerHTML = n;
+        document.getElementById("w_hour").innerHTML = formatHTime(h);
+        document.getElementById("w_hour_ampm").innerHTML = (h > 11) ? "PM" : "AM";
+        document.getElementById("w_date").innerHTML = formatDate(d);
+        
+        var el=document.getElementById("clock-5");
+		var m = d.getMinutes();
+		setbrimg(m);
+        </script>
+        
+    </body>
+</html>
