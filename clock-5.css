@@ -56,27 +56,3 @@ span#w_date{
 span#w_day{
 	font-size: 1.2em;
 }
-
-@media screen and (max-width: 480px) {
-	.centered{
-		margin-top: 150px;
-	}
-	.hero-circle{
-		width: 360px; 
-		height:360px;
-	}
-	span#w_hour{
-		font-size: 6em; 
-		padding-top: 70px;
-	}
-	span#w_hour_ampm{
-		font-size: 2em;
-	}
-	span#w_date{
-		font-size: 1.2em; 
-		padding-top: 20px;
-	}
-	span#w_day{
-		font-size: 1.2em;
-	}
-}
