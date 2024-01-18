@@ -4,8 +4,64 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Clock 5</title>
-        <link rel="stylesheet" href="clock-5.css">
+        <!-- <link rel="stylesheet" href="clock-5.css"> -->
+<style>
+    /* ======== General ======== */
 
+body{
+	font-family: "Arial"; 
+	margin: 0; padding: 0;
+	background-color: #000
+}
+.page-black{
+	color: #fff; 
+	padding: 50px 0;
+}
+
+/* ======== Centered Clock ======== */
+
+/* Center the clock horizontally */
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-circle {
+    width: 360px;
+    height: 360px;
+    background-image: url("clock/01.png");
+    background-size: 100% 100%;
+    position: relative;
+	padding: 10px;
+}
+
+
+
+span#w_hour, 
+span#w_hour_ampm, 
+span#w_date, 
+span#w_day{
+	display: block; 
+	text-align: center;
+}
+span#w_hour{
+	font-size: 5em; 
+	padding-top: 70px;
+}
+span#w_hour_ampm{
+	font-size: 2.4em;
+}
+span#w_date{
+	font-size: 1.2em; 
+	padding-top: 30px;
+}
+span#w_day{
+	font-size: 1.2em;
+}
+</style>
         <script>
             function startTime(){
                 var now = new Date(),
