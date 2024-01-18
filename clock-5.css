@@ -23,17 +23,13 @@ body{
 
 .hero-circle {
     /* Add your custom styles for the clock here */
-    width: 400px;
-    height: 400px;
+    width: 360px;
+    height: 360px;
     background-image: url("clock/01.png");
     background-size: 100% 100%;
     position: relative;
 }
 
-/* Add custom styles for clock face elements here */
-.hero-face {
-    /* Add your custom styles for clock face elements here */
-}
 
 span#w_hour, 
 span#w_hour_ampm, 
@@ -43,8 +39,8 @@ span#w_day{
 	text-align: center;
 }
 span#w_hour{
-	font-size: 6em; 
-	padding-top: 80px;
+	font-size: 5em; 
+	padding-top: 70px;
 }
 span#w_hour_ampm{
 	font-size: 2.4em;
