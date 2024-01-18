@@ -38,8 +38,6 @@ body{
 	padding: 10px;
 }
 
-
-
 span#w_hour, 
 span#w_hour_ampm, 
 span#w_date, 
@@ -61,6 +59,25 @@ span#w_date{
 span#w_day{
 	font-size: 1.2em;
 }
+
+@media (max-width: 767px) {
+
+    span#w_hour{
+        font-size: 4em; 
+        padding-top: 70px;
+    }
+    span#w_hour_ampm{
+        font-size: 2em;
+    }
+    span#w_date{
+        font-size: 1em; 
+        padding-top: 30px;
+    }
+    span#w_day{
+        font-size: 1em;
+    }
+    }
+
 </style>
         <script>
             function startTime(){
